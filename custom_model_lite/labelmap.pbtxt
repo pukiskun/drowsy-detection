@@ -1,0 +1,15 @@
+item {
+  id: 1
+  name: 'supir-sadar'
+}
+
+item {
+  id: 2
+  name: 'supir-mengantuk'
+}
+
+item {
+  id: 3
+  name: 'supir-tertidur'
+}
+
