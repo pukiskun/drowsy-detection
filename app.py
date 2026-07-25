@@ -1,9 +1,13 @@
 import streamlit as st
 import cv2
 import numpy as np
-import tensorflow as tf
 import os
 import time
+
+try:
+    from tflite_runtime.interpreter import Interpreter
+except ImportError:
+    from tensorflow.lite.python.interpreter import Interpreter
 
 st.set_page_config(page_title="Drowsiness Detection System", page_icon="🚗", layout="wide")
 
@@ -14,7 +18,7 @@ COLOR_MAP = {1: (34, 197, 94), 2: (245, 158, 11), 3: (239, 68, 68)}
 
 @st.cache_resource
 def load_model():
-    interpreter = tf.lite.Interpreter(model_path=MODEL_PATH)
+    interpreter = Interpreter(model_path=MODEL_PATH)
     interpreter.allocate_tensors()
     return (
         interpreter,
