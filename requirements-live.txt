@@ -1,0 +1,2 @@
+# Optional: for Live Webcam mode (streamlit-webrtc)
+streamlit-webrtc>=0.47.0
