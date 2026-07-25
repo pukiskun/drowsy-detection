@@ -1,4 +1,5 @@
 streamlit
 opencv-python-headless
 tflite-runtime
+numpy<2
 pillow
