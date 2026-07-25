@@ -7,7 +7,11 @@ import time
 try:
     from tflite_runtime.interpreter import Interpreter
 except ImportError:
-    from tensorflow.lite.python.interpreter import Interpreter
+    try:
+        from tensorflow.lite.python.interpreter import Interpreter
+    except ImportError:
+        import tensorflow as tf
+        Interpreter = tf.lite.Interpreter
 
 st.set_page_config(page_title="Drowsiness Detection System", page_icon="🚗", layout="wide")
 
